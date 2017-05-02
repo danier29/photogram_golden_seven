@@ -1,4 +1,11 @@
 Rails.application.routes.draw do
+
+# delete
+get("/delete_photo/:id", {:controller => "photos", :action => "destroy_row"})
+
+# home
+get("/", {:controller => "photos", :action => "index"})
+
 # create
 get("/photos/new", {:controller => "photos", :action => "new_form"})
 get("/create_photo", {:controller => "photos", :action => "create_row"})
@@ -11,7 +18,5 @@ get("/photos/:id", {:controller => "photos", :action => "show"})
 get("/photos/:id/edit", {:controller => "photos", :action => "edit_form"})
 get("/update_photo/:id", {:controller => "photos", :action => "update_row"})
 
-#delete
-get("/photos/delete_photo/:id", {:controller => "photos", :action => "destroy_row"})
 
 end
